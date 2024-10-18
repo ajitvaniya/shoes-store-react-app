@@ -8,7 +8,7 @@ import Offers from './pages/offers/Offers.jsx';
 import Collections from './pages/collections/Collections.jsx';
 import SignUpComponent from './pages/signup/SignUpComponent.jsx';
 import ErrorComponent from './pages/common/ErrorComponent.jsx';
-import Contact from './pages/contact/Contact.jsx';
+import Contact from './pages/contact/Contact.jsx'; 
 
 
 function App() {

@@ -5,12 +5,16 @@ import carouselshoe2 from '../assets/img/carousel_shoes_2.png';
 import carouselshoe3 from '../assets/img/carousel_shoes_3.png';
 import carouselshoe4 from '../assets/img/carousel_shoes_4.png';
 import carouselshoe5 from '../assets/img/carousel_shoes_5.png';
+import NavComponent from './NavComponent';
 
 const ProductDisplay = () => {
   const [selectedColor, setSelectedColor] = useState('pink');
   const [selectedSize, setSelectedSize] = useState(6);
 
   return (
+    <>
+    <NavComponent />
+    
     <div className="flex justify-between items-center h-screen bg-gray-900 text-white p-10">
       
       <div className="w-2/3">
@@ -62,6 +66,7 @@ const ProductDisplay = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

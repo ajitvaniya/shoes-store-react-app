@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
-import mainshoes1 from '../assets/img/main_shoes_1.png';
-import carouselshoe1 from '../assets/img/carousel_shoes_1.png';
-import carouselshoe2 from '../assets/img/carousel_shoes_2.png';
-import carouselshoe3 from '../assets/img/carousel_shoes_3.png';
-import carouselshoe4 from '../assets/img/carousel_shoes_4.png';
-import carouselshoe5 from '../assets/img/carousel_shoes_5.png';
-import NavComponent from './NavComponent';
+import mainshoes1 from '../../assets/img/main_shoes_1.png';
+import carouselshoe1 from '../../assets/img/carousel_shoes_1.png';
+import carouselshoe2 from '../../assets/img/carousel_shoes_2.png';
+import carouselshoe3 from '../../assets/img/carousel_shoes_3.png';
+import carouselshoe4 from '../../assets/img/carousel_shoes_4.png';
+import carouselshoe5 from '../../assets/img/carousel_shoes_5.png'; 
 
-const ProductDisplay = () => {
+const Products = () => {
   const [selectedColor, setSelectedColor] = useState('pink');
   const [selectedSize, setSelectedSize] = useState(6);
 
   return (
-    <>
-    <NavComponent />
+    <> 
     
     <div className="flex justify-between items-center h-screen bg-gray-900 text-white p-10">
       
@@ -70,4 +68,4 @@ const ProductDisplay = () => {
   );
 };
 
-export default ProductDisplay;
+export default Products;

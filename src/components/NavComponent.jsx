@@ -3,8 +3,15 @@ import React from 'react';
 import logoIcon from '../assets/img/logo.png';
 import bagIcon from '../assets/img/bag.png';
 import menuIcon from '../assets/img/menuIcon.png';
+import { Link } from 'react-router-dom';
 
 const NavComponent = () => {
+  let userSignInData = localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')):null;
+  
+  const logout =()=>{
+    localStorage.removeItem('userDetails');
+  }
+  
   return (
     <nav className="bg-gradient-to-r from-gray-800 to-black text-white py-4 px-8  shadow-lg flex justify-between items-center">
       <div className="flex items-center space-x-4">
@@ -13,17 +20,27 @@ const NavComponent = () => {
       
       <ul className="flex space-x-8 text-sm">
         <li>
-          <a href="#" className="hover:text-gray-400">Home</a>
+          <Link to={'/'} className="hover:text-gray-400">Home</Link> 
         </li>
         <li>
-          <a href="#" className="hover:text-gray-400">Offers</a>
+          <Link to={'/offers'} className="hover:text-gray-400">Offers</Link> 
         </li>
-        <li>
-          <a href="#" className="hover:text-gray-400">Collections</a>
+        <li> 
+          <Link to={'/collections'} className="hover:text-gray-400">Collections</Link> 
         </li>
-        <li>
-          <a href="#" className="hover:text-gray-400">Contact</a>
+        <li> 
+          <Link to={'/contact'} className="hover:text-gray-400">Contact</Link> 
         </li>
+        {
+          !userSignInData ?
+            <li> 
+            <Link to={'/sign-up'} className="hover:text-gray-400">Sign Up</Link> 
+          </li>:
+           <li> 
+           <div onClick={logout} className="hover:text-gray-400">Logout</div> 
+         </li>
+        }
+        
       </ul>
 
       <div className="flex items-center space-x-6">
@@ -44,7 +61,9 @@ const NavComponent = () => {
 
         
         <div>
-            <img src={menuIcon} alt="menuIcon" className="w-[50px] h-[50px]" /> 
+            <Link to={'/sign-up'}>
+              <img src={menuIcon} alt="menuIcon" className="w-[50px] h-[50px]" /> 
+            </Link>
         </div>
       </div>
 

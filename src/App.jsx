@@ -12,7 +12,7 @@ import Contact from './pages/contact/Contact.jsx';
 
 
 function App() {
-
+  console.log(`console.log added`);
   return (
     <Router>
       <Routes> 
